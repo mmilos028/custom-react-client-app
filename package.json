@@ -1,0 +1,117 @@
+{
+  "name": "custom-application",
+  "version": "3.2.2",
+  "description": "Custom Application",
+  "author": "Milos Milosevic",
+  "private": true,
+  "main": "src/index.tsx",
+  "homepage": "./",
+  "dependencies": {
+    "@date-io/date-fns": "^1.1.0",
+    "@material-ui/core": "^3.9.2",
+    "@material-ui/icons": "^3.0.2",
+    "@material-ui/lab": "^3.0.0-alpha.30",
+    "@material-ui/styles": "^4.6.0",
+    "@types/material-ui": "^0.21.6",
+    "@types/react": "^16.8.7",
+    "@types/react-dom": "^16.8.2",
+    "@types/react-intl": "^2.3.17",
+    "@types/react-router-dom": "^4.3.1",
+    "axios": "^0.18.1",
+    "concurrently": "^4.1.1",
+    "date-fns": "^2.0.0-alpha.27",
+    "downshift": "^3.2.7",
+    "electron-is-dev": "^1.1.0",
+    "fs": "0.0.1-security",
+    "html2canvas": "^1.0.0-rc.5",
+    "kalendaryo": "^1.11.1",
+    "macaddress": "^0.2.9",
+    "material-ui-datetime-range-picker": "^0.2.2",
+    "material-ui-pickers": "^2.2.4",
+    "moment": "^2.24.0",
+    "qrcode.react": "^1.0.0",
+    "rc-easyui": "^1.0.25",
+    "react": "^16.8.4",
+    "react-barcode": "1.4.0",
+    "react-dom": "^16.8.4",
+    "react-intl": "^2.8.0",
+    "react-redux": "^6.0.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^2.1.8",
+    "react-select": "^3.0.8",
+    "react-to-print": "2.5.1",
+    "react-window": "^1.8.5",
+    "redux": "^4.0.1",
+    "redux-promise-middleware": "^6.1.0",
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^4.1.3"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.11",
+    "@types/node": "^11.11.0",
+    "electron": "8.0.0-beta.8",
+    "electron-builder": "21.2.0",
+    "foreman": "^3.0.1",
+    "path": "^0.12.7",
+    "typescript": "^2.9.2",
+    "url": "^0.11.0",
+    "wait-on": "^3.3.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "electron": "electron .",
+    "electron-dev": "set ELECTRON_START_URL=http://localhost:3000 && electron .",
+    "electron-start": "concurrently \"npm start\" \"wait-on http://localhost:3000 && electron .\"",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "dist:webinstall": "electron-builder --nsisWeb"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.01%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "build": {
+    "appId": "com.mook",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    },
+    "nsisWeb": {
+      "oneClick": true,
+      "appPackageUrl": "https://www.some-custom-url.com/download/custom-application-3.2.2-x64.nsis.7z",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    },
+    "win": {
+      "target": [
+        {
+          "target": "portable"
+        },
+        {
+          "target": "nsis"
+        },
+        {
+          "target": "nsis-web"
+        }
+      ],
+      "icon": "favicon.ico",
+      "legalTrademarks": "(c) 2020 www.some-custom-url.com",
+      "publisherName": "Milos Milosevic"
+    },
+    "linux": {
+      "target": "deb",
+      "icon": "favicon.ico"
+    }
+  }
+}
