@@ -5,7 +5,7 @@
 Download the example [or clone the repo]():
 
 ```sh
-cd backoffice-react-client
+cd custom-react-client-app
 ```
 
 Install it and run on localhost:3000:
